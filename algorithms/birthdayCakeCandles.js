@@ -1,9 +1,18 @@
-function birthdayCakeCandles(n, ar) {
+function birthdayCakeCandles(arr) {
   /*
    * Write your code here.
    */
+  const max = arr.sort((a, b) => {
+    return parseInt(a, 10) - parseInt(b, 10);
+  })[arr.length - 1];
 
-  return '';
+  const index = arr.findIndex((num) => {
+    return num === max;
+  });
+
+  return arr.length - index;
 }
 
-console.log(birthdayCakeCandles(4, '3 2 1 3'.split(' ')));
+const test = '1 1 2 3 4';
+
+console.log(birthdayCakeCandles(test.split(' ')));
