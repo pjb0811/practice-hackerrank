@@ -1,4 +1,4 @@
-function countApplesAndOranges(s, t, a, b, apples, oranges) {
+function applesAndOranges(s, t, a, b, apples, oranges) {
   const applesCount = apples.filter((apple) => {
     const pos = (a + apple);
     return (s <= pos) && (t >= pos);
@@ -13,4 +13,4 @@ function countApplesAndOranges(s, t, a, b, apples, oranges) {
   console.log(orangeCount.length);
 }
 
-countApplesAndOranges(7, 11, 5, 15, [-2, 2, 1], [5, -6]);
+applesAndOranges(7, 11, 5, 15, [-2, 2, 1], [5, -6]);
