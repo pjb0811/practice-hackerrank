@@ -1,19 +1,28 @@
 function migratoryBirds(n, ar) {
+  let objects = {};
+  let max = 0;
   let result = '';
-  /* ar.sort((a, b) => a - b).reduce((prev, curr, index) => {
-    if (prev[index - 1] === curr) {
-      result = curr;
+
+  ar.map((num) => {
+    if (!objects[num]) {
+      objects[num] = 1;
     } else {
-      count = 1;
+      objects[num] += 1;
     }
-    prev.push(curr);
-    return prev;
-  }, []); */
+  });
+
+  for (let key in objects) {
+    if (max < objects[key]) {
+      max = objects[key];
+      result = key;
+    }
+  }
 
   return result;
 }
 
 const n = 6;
-const ar = '1 4 4 4 5 3'.split(' ').map(i => parseInt(i));
+const ar = '1 2 4 4 4 5'.split(' ').map(i => parseInt(i));
 
+// migratoryBirds(n, ar);
 console.log(migratoryBirds(n, ar));
